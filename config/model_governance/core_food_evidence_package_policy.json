@@ -1,0 +1,46 @@
+{
+  "policy_id": "core-food-evidence-package",
+  "policy_version": "1.0.0",
+  "input_decision_support_policy_id": "core-food-decision-support",
+  "result_classification": "GOVERNED_PRESENTATION_EVIDENCE",
+  "authoritative_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "allowed_review_statuses": [
+    "PENDING_REVIEW",
+    "REVIEW_IN_PROGRESS",
+    "REVIEW_COMPLETE",
+    "RETURNED_FOR_EVIDENCE"
+  ],
+  "allowed_publication_decisions": [
+    "APPROVED_FOR_INTERNAL_PRESENTATION",
+    "APPROVED_FOR_EXTERNAL_PRESENTATION",
+    "REJECTED",
+    "HOLD"
+  ],
+  "publishable_decisions": [
+    "APPROVED_FOR_INTERNAL_PRESENTATION",
+    "APPROVED_FOR_EXTERNAL_PRESENTATION"
+  ],
+  "unreviewed_cases_publishable": false,
+  "hold_cases_publishable": false,
+  "rejected_cases_publishable": false,
+  "sensitivity_only_cases_publishable": false,
+  "analyst_review_required": true,
+  "reviewer_identity_required": true,
+  "review_date_required": true,
+  "review_rationale_required": true,
+  "approved_narrative_scope_required": true,
+  "evidence_verification_required": true,
+  "prohibited_claims_verification_required": true,
+  "official_country_ranking_enabled": false,
+  "official_supplier_ranking_enabled": false,
+  "agricultural_origin_inference_allowed": false,
+  "failure_prediction_enabled": false,
+  "causal_disruption_claims_allowed": false,
+  "dynamic_substitution_modeled": false,
+  "intervention_effectiveness_claims_allowed": false,
+  "implementation_recommendation_enabled": false
+}

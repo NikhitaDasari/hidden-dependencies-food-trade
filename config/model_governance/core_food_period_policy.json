@@ -1,0 +1,90 @@
+{
+  "policy_id": "core-food-datathon-period",
+  "policy_version": "1.0.0",
+  "period_policy": "DATATHON_SOURCE_ALIGNED",
+  "authoritative_year_sources": [
+    "core_food_fbs_annual",
+    "core_food_supplier_network_annual"
+  ],
+  "expected_years": [2021, 2022, 2023],
+  "external_data_alignment": "INTERSECTION_ONLY",
+  "allow_future_information": false,
+  "allow_partial_external_coverage_in_primary": false,
+  "allow_superset_filtering": true,
+  "official_ranking_enabled": false,
+  "external_manifest_path": "config/data_sources/core_food_external_source_manifest.csv",
+  "sources": [
+    {
+      "source_name": "core_food_fbs_annual",
+      "source_path": "outputs/tables/core_food_fbs_foundation/core_food_fbs_annual_2021_2023.csv",
+      "source_type": "DATATHON_PRIMARY",
+      "date_field": "year",
+      "required": true,
+      "primary_candidate": true
+    },
+    {
+      "source_name": "core_food_supplier_network_annual",
+      "source_path": "outputs/tables/core_food_supplier_network/core_food_supplier_network_annual.csv",
+      "source_type": "DATATHON_PRIMARY",
+      "date_field": "year",
+      "required": true,
+      "primary_candidate": true
+    },
+    {
+      "source_name": "core_food_fbs_baseline_usability",
+      "source_path": "outputs/tables/core_food_fbs_foundation/core_food_fbs_baseline_usability.csv",
+      "source_type": "DERIVED_STATIC",
+      "date_field": null,
+      "required": true,
+      "primary_candidate": false
+    },
+    {
+      "source_name": "core_food_supplier_network_summary",
+      "source_path": "outputs/tables/core_food_supplier_network/core_food_supplier_network_summary.csv",
+      "source_type": "DERIVED_STATIC",
+      "date_field": null,
+      "required": true,
+      "primary_candidate": false
+    },
+    {
+      "source_name": "core_food_model_readiness",
+      "source_path": "outputs/tables/core_food_model_readiness/core_food_model_readiness.csv",
+      "source_type": "GOVERNED_DERIVED",
+      "date_field": null,
+      "required": true,
+      "primary_candidate": false
+    },
+    {
+      "source_name": "core_food_analytical_scopes",
+      "source_path": "outputs/tables/core_food_fbs_foundation/core_food_analytical_scopes.csv",
+      "source_type": "STATIC_REFERENCE",
+      "date_field": null,
+      "required": true,
+      "primary_candidate": false
+    },
+    {
+      "source_name": "core_food_readiness_policy",
+      "source_path": "config/model_governance/core_food_readiness_policy.json",
+      "source_type": "STATIC_GOVERNANCE",
+      "date_field": null,
+      "required": true,
+      "primary_candidate": false
+    },
+    {
+      "source_name": "scope_mapping_decisions",
+      "source_path": "config/review_decisions/scope_mapping_decisions.csv",
+      "source_type": "STATIC_GOVERNANCE",
+      "date_field": null,
+      "required": true,
+      "primary_candidate": false
+    },
+    {
+      "source_name": "country_eligibility_decisions",
+      "source_path": "config/review_decisions/country_eligibility_decisions.csv",
+      "source_type": "STATIC_GOVERNANCE",
+      "date_field": null,
+      "required": true,
+      "primary_candidate": false
+    }
+  ]
+}

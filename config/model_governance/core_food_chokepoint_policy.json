@@ -1,0 +1,31 @@
+{
+  "policy_id": "core-food-supplier-chokepoints",
+  "policy_version": "1.0.0",
+  "input_model_policy_id": "core-food-model-specification",
+  "result_classification": "DEVELOPMENTAL_SYSTEMIC_SIGNAL",
+  "authoritative_years": [2021, 2022, 2023],
+  "primary_population": "PRIMARY_ONLY",
+  "expanded_population": "PRIMARY_PLUS_LIMITED",
+  "primary_transformation": "WITHIN_SCOPE_PERCENTILE",
+  "material_supplier_thresholds": [0.01, 0.10, 0.25, 0.50],
+  "minimum_relationship_years_for_persistence": 2,
+  "minimum_scenarios_for_stability": 4,
+  "systemic_high_percentile": 0.80,
+  "systemic_low_percentile": 0.20,
+  "low_substitutability_share_threshold": 0.25,
+  "low_substitutability_effective_supplier_threshold": 3.0,
+  "removal_share_loss_thresholds": [0.10, 0.25, 0.50],
+  "vulnerability_band_weights": {
+    "CONSISTENTLY_HIGH": 1.00,
+    "OFTEN_HIGH": 0.75,
+    "MIXED": 0.50,
+    "OFTEN_LOW": 0.25,
+    "CONSISTENTLY_LOW": 0.00
+  },
+  "agricultural_origin_inference_allowed": false,
+  "supplier_causality_claims_allowed": false,
+  "dynamic_substitution_modeled": false,
+  "evidence_confidence_in_systemic_weighting": false,
+  "official_chokepoint_score_enabled": false,
+  "official_supplier_ranking_enabled": false
+}

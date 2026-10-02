@@ -1,0 +1,27 @@
+{
+  "policy_id": "core-food-historical-features",
+  "policy_version": "1.0.0",
+  "period_policy_id": "core-food-datathon-period",
+  "expected_years": [2021, 2022, 2023],
+  "analysis_modes": ["RETROSPECTIVE_FULL_PERIOD", "AS_OF_HISTORICAL_SIMULATION"],
+  "primary_status": "READY_FOR_PRIMARY_MODEL",
+  "limited_status": "READY_WITH_LIMITATIONS",
+  "expected_primary_records": 661,
+  "expected_limited_records": 816,
+  "material_supplier_share": 0.01,
+  "trend_minimum_observations": 2,
+  "coefficient_of_variation_requires_positive_mean": true,
+  "as_of_features_use_current_and_prior_years_only": true,
+  "missing_network_policy": "PRESERVE_UNAVAILABLE",
+  "evidence_confidence_separate_from_analytical_features": true,
+  "official_vulnerability_score_enabled": false,
+  "official_ranking_enabled": false,
+  "feature_directions": {
+    "gross_import_reliance_raw": "descriptive_exposure",
+    "net_import_dependence_raw": "descriptive_exposure",
+    "hhi": "descriptive_concentration",
+    "top1_share": "descriptive_concentration",
+    "effective_supplier_count": "descriptive_diversification",
+    "supplier_turnover": "ambiguous_diagnostic_only"
+  }
+}

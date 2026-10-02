@@ -1,0 +1,27 @@
+{
+  "dataset_id": "faostat_food_balances",
+  "dataset_name": "FAOSTAT Food Balances",
+  "provider": "Food and Agriculture Organization of the United Nations",
+  "dataset_code": "FBS",
+  "source_page": "https://www.fao.org/faostat/en/#data/FBS",
+  "catalog_url": "https://data.apps.fao.org/catalog/iso/2f264bb6-1238-459a-bf8b-0e2d0a16804a",
+  "download_url": "https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data_(Normalized).zip",
+  "downloaded_at_utc": "2026-08-19T04:22:44.100229+00:00",
+  "local_file": "data/raw/faostat/food_balances.zip",
+  "archive_size_bytes": 54840802,
+  "archive_sha256": "26200855ed5da3d0805e34219124e241d0e0bc6959d0995ebc77a10dd84cbaf1",
+  "archive_validated": true,
+  "data_revision_as_documented": "2025-10-16",
+  "time_coverage": {
+    "first_year": 2010,
+    "latest_year": 2023
+  },
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "citation": "FAO. Food Balances (2010-). FAOSTAT. Accessed 19 August 2026.",
+  "repository_policy": {
+    "raw_archive_committed_to_git": false,
+    "extracted_csv_committed_to_git": false,
+    "manifest_committed_to_git": true
+  }
+}

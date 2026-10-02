@@ -1,0 +1,88 @@
+{
+  "policy_id": "core-food-model-specification",
+  "policy_version": "1.0.0",
+  "input_feature_policy_id": "core-food-historical-features",
+  "result_classification": "DEVELOPMENTAL_ANALYTICAL_RESULT",
+  "authoritative_years": [2021, 2022, 2023],
+  "populations": ["PRIMARY_ONLY", "PRIMARY_PLUS_LIMITED"],
+  "primary_transformation": "WITHIN_SCOPE_PERCENTILE",
+  "sensitivity_transformations": [
+    "WITHIN_SCOPE_EMPIRICAL_CDF",
+    "WINSORIZED_WITHIN_SCOPE",
+    "POOLED_PERCENTILE_SENSITIVITY"
+  ],
+  "minimum_scope_observations": 5,
+  "winsor_lower_quantile": 0.05,
+  "winsor_upper_quantile": 0.95,
+  "high_band_percentile": 0.8,
+  "low_band_percentile": 0.2,
+  "top_decile_threshold": 0.9,
+  "top_quintile_threshold": 0.8,
+  "official_vulnerability_score_enabled": false,
+  "official_ranking_enabled": false,
+  "metrics": {
+    "exposure_gross": {
+      "source_column": "gross_import_reliance_raw_period_average",
+      "direction": "HIGHER_IS_MORE_VULNERABLE",
+      "dimension": "EXPOSURE"
+    },
+    "exposure_net": {
+      "source_column": "net_import_dependence_raw_period_average",
+      "direction": "HIGHER_IS_MORE_VULNERABLE",
+      "dimension": "EXPOSURE"
+    },
+    "concentration_hhi": {
+      "source_column": "hhi_period_average",
+      "direction": "HIGHER_IS_MORE_VULNERABLE",
+      "dimension": "CONCENTRATION"
+    },
+    "concentration_top1": {
+      "source_column": "top1_share_period_average",
+      "direction": "HIGHER_IS_MORE_VULNERABLE",
+      "dimension": "CONCENTRATION"
+    },
+    "concentration_trend": {
+      "source_column": "hhi_first_to_latest_change",
+      "direction": "HIGHER_IS_MORE_VULNERABLE",
+      "dimension": "DETERIORATION"
+    },
+    "material_supplier_loss": {
+      "source_column": "material_supplier_count_first_to_latest_change",
+      "direction": "LOWER_IS_MORE_VULNERABLE",
+      "dimension": "DETERIORATION"
+    }
+  },
+  "scenarios": {
+    "S1_EXPOSURE_ONLY": {
+      "metrics": {"exposure_gross": 1.0}
+    },
+    "S2_EXPOSURE_HHI": {
+      "metrics": {"exposure_gross": 0.5, "concentration_hhi": 0.5}
+    },
+    "S3_EXPOSURE_HHI_CONCENTRATION_TREND": {
+      "metrics": {
+        "exposure_gross": 0.4,
+        "concentration_hhi": 0.4,
+        "concentration_trend": 0.2
+      }
+    },
+    "S4_EXPOSURE_TOP1": {
+      "metrics": {"exposure_gross": 0.5, "concentration_top1": 0.5}
+    },
+    "S5_EXPOSURE_HHI_MATERIAL_SUPPLIER_LOSS": {
+      "metrics": {
+        "exposure_gross": 0.4,
+        "concentration_hhi": 0.4,
+        "material_supplier_loss": 0.2
+      }
+    },
+    "S6_NET_EXPOSURE_HHI": {
+      "metrics": {"exposure_net": 0.5, "concentration_hhi": 0.5}
+    }
+  },
+  "weight_sensitivity": {
+    "EQUAL_DIMENSION_WEIGHT": [0.5, 0.5],
+    "EXPOSURE_HEAVY": [0.7, 0.3],
+    "CONCENTRATION_HEAVY": [0.3, 0.7]
+  }
+}

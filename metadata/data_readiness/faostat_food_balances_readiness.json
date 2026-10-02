@@ -1,0 +1,71 @@
+{
+  "dataset_id": "faostat_food_balances",
+  "readiness_status": "READY_FOR_HARMONIZATION",
+  "validated_on": "2026-08-19",
+  "source_manifest": "metadata/source_manifests/faostat_food_balances.json",
+  "local_profile": "outputs/model_results/food_balances_complete_profile.json",
+  "validation_checks": {
+    "archive_exists": true,
+    "checksum_matches_manifest": true,
+    "archive_integrity_validated": true,
+    "expected_total_rows": true,
+    "coverage_begins_in_2010": true,
+    "coverage_ends_in_2023": true,
+    "fourteen_years_available": true,
+    "no_missing_values": true,
+    "no_duplicate_key_groups": true,
+    "countries_profiled": true,
+    "aggregates_profiled": true,
+    "raw_archive_not_tracked": true,
+    "duckdb_not_tracked": true
+  },
+  "profile_summary": {
+    "data_file": "data/raw/faostat/food_balances/FoodBalanceSheets_E_All_Data_(Normalized).csv",
+    "file_size_bytes": 633057019,
+    "total_rows": 4820497,
+    "rows_with_values": 4820497,
+    "rows_missing_values": 0,
+    "area_codes": 213,
+    "area_names": 213,
+    "item_codes": 123,
+    "item_names": 120,
+    "element_codes": 21,
+    "element_names": 21,
+    "units": 7,
+    "flags": 3,
+    "first_year": 2010,
+    "latest_year": 2023,
+    "years_available": 14,
+    "countries_and_territories": 179,
+    "geographic_aggregates": 34,
+    "duplicate_key_groups": 0,
+    "duplicate_excess_rows": 0
+  },
+  "medallion_status": {
+    "bronze": "COMPLETE",
+    "silver": "PENDING_TRADE_MATRIX_ALIGNMENT",
+    "gold": "NOT_STARTED"
+  },
+  "approved_uses": [
+    "National commodity-supply denominators",
+    "Production-buffer calculation",
+    "National import-total reconciliation",
+    "Food-use context",
+    "Population exposure",
+    "Historical production anomalies"
+  ],
+  "prohibited_interpretations": [
+    "Household food consumption",
+    "Predicted hunger",
+    "Strategic reserve inventory",
+    "Bilateral supplier relationships",
+    "Causal effect of trade disruption"
+  ],
+  "mandatory_downstream_controls": [
+    "Exclude geographic aggregates from country analysis",
+    "Retain source flags",
+    "Avoid overlapping broad and specific food items",
+    "Convert 1000 tonnes to tonnes before trade joins",
+    "Reconcile bilateral imports with national imports"
+  ]
+}

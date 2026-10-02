@@ -1,0 +1,57 @@
+{
+  "policy_id": "core-food-model-readiness",
+  "policy_version": "2.1.0",
+  "baseline_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "coverage_thresholds": {
+    "low_upper_exclusive": 0.25,
+    "partial_upper_exclusive": 0.75,
+    "aligned_upper_inclusive": 1.25,
+    "above_fbs_upper_inclusive": 2.0
+  },
+  "minimum_years": {
+    "primary_fbs_gross": 3,
+    "primary_fbs_net": 3,
+    "primary_network": 3,
+    "limited_fbs_gross": 2,
+    "limited_network": 2
+  },
+  "primary_mapping_decisions": [
+    "PRIMARY_ALIGNED",
+    "PRIMARY_SEPARATE_SUBFAMILY"
+  ],
+  "limited_mapping_decisions": [
+    "PRIMARY_ALIGNED",
+    "PRIMARY_SEPARATE_SUBFAMILY",
+    "PARTIAL_CHANNEL_APPROVED"
+  ],
+  "blocked_mapping_decisions": [
+    "CONVERSION_METHOD_REQUIRED",
+    "SENSITIVITY_ONLY",
+    "REJECTED_OVERLAP",
+    "REJECTED_DOUBLE_COUNTING",
+    "REVIEW_ITEM_COVERAGE"
+  ],
+  "primary_fbs_confidence": [
+    "HIGH",
+    "MODERATE"
+  ],
+  "limited_fbs_confidence": [
+    "HIGH",
+    "MODERATE",
+    "PARTIAL"
+  ],
+  "require_human_country_approval_for_release": true,
+  "require_human_mapping_approval_for_release": true,
+  "allow_coverage_override_to_primary": false,
+  "final_ranking_enabled": false,
+  "universe": "ALL_FBS_BASELINES",
+  "governance_semantics": {
+    "automated_recommendations_are_not_approvals": true,
+    "missing_human_decisions_fail_closed": true,
+    "country_review_queues_split_standard_exception": true
+  }
+}
